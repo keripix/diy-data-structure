@@ -27,11 +27,6 @@ class DoubleLinkedList
         return $this->size;
     }
 
-    public function current()
-    {
-        return null;
-    }
-
     public function head(): ?Node
     {
         return $this->head;
@@ -40,16 +35,6 @@ class DoubleLinkedList
     public function tail(): ?Node
     {
         return $this->tail;
-    }
-
-    public function next()
-    {
-        return null;
-    }
-
-    public function previous()
-    {
-        return null;
     }
 
     public function prepend($value): Node
