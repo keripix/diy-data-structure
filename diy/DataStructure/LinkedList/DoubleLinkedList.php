@@ -5,6 +5,8 @@ namespace Diy\DataStructure\LinkedList;
 class DoubleLinkedList
 {
 
+    private $head;
+
     public function getSize()
     {
         return 0;
@@ -17,7 +19,7 @@ class DoubleLinkedList
 
     public function head()
     {
-        return null;
+        return $this->head;
     }
 
     public function tail()
@@ -33,5 +35,11 @@ class DoubleLinkedList
     public function previous()
     {
         return null;
+    }
+
+    public function prepend($string)
+    {
+        $this->head = $string;
+        return $string;
     }
 }
