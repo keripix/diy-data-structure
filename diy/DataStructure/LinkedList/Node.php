@@ -43,7 +43,7 @@ class Node
     /**
      * @return Node
      */
-    public function getPrevious(): Node
+    public function previous(): Node
     {
         return $this->previous;
     }
