@@ -32,12 +32,12 @@ class DoubleLinkedList
         return null;
     }
 
-    public function head(): Node
+    public function head()
     {
         return $this->head;
     }
 
-    public function tail(): Node
+    public function tail()
     {
         return $this->tail;
     }
