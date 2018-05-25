@@ -57,4 +57,19 @@ class MultiNodeDoubleLinkedListTest extends \PHPUnit\Framework\TestCase
 
         $this->assertEquals($secondNode, $doubleLinkedList->tail());
     }
+
+    /**
+     * @test
+     */
+    public function upondInsertingTwoNewNodesFromTheFrontThenTheTailAndHeadShouldNotPointAtTheSameNode(): void
+    {
+        $doubleLinkedList = new DoubleLinkedList();
+        $first = $doubleLinkedList->prepend(1);
+        $second = $doubleLinkedList->prepend(2);
+
+        $this->assertNotEquals($first, $second);
+        $this->assertNotEquals($first, $doubleLinkedList->head());
+        $this->assertNotEquals($second, $doubleLinkedList->tail());
+        $this->assertNotEquals($doubleLinkedList->head(), $doubleLinkedList->tail());
+    }
 }
