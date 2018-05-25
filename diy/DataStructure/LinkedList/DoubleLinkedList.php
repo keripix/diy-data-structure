@@ -4,13 +4,27 @@ namespace Diy\DataStructure\LinkedList;
 
 class DoubleLinkedList
 {
-
+    /**
+     * @var Node
+     */
     private $head;
+    /**
+     * @var Node
+     */
     private $tail;
+    /**
+     * @var int
+     */
+    private $size;
 
-    public function getSize()
+    public function __construct()
     {
-        return 0;
+        $this->size = 0;
+    }
+
+    public function getSize(): int
+    {
+        return $this->size;
     }
 
     public function current()
@@ -18,12 +32,12 @@ class DoubleLinkedList
         return null;
     }
 
-    public function head()
+    public function head(): Node
     {
         return $this->head;
     }
 
-    public function tail()
+    public function tail(): Node
     {
         return $this->tail;
     }
@@ -38,10 +52,14 @@ class DoubleLinkedList
         return null;
     }
 
-    public function prepend($value)
+    public function prepend($value): Node
     {
-        $this->head = $value;
-        $this->tail = $value;
-        return $value;
+        $newNode = new Node($value);
+        $this->head = $newNode;
+        $this->tail = $newNode;
+
+        $this->size++;
+
+        return $newNode;
     }
 }
