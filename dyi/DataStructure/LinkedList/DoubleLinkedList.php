@@ -19,4 +19,9 @@ class DoubleLinkedList
     {
         return null;
     }
+
+    public function previous()
+    {
+        return null;
+    }
 }

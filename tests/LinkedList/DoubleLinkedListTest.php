@@ -32,4 +32,13 @@ class DoubleLinkedListTest extends \PHPUnit\Framework\TestCase
         $doubleLinkedList = new DoubleLinkedList();
         $this->assertEmpty($doubleLinkedList->next());
     }
+
+    /**
+     * @test
+     */
+    public function anEmptyListPrevNodeShouldBeNull()
+    {
+        $doubleLinkedList = new DoubleLinkedList();
+        $this->assertEmpty($doubleLinkedList->previous());
+    }
 }
