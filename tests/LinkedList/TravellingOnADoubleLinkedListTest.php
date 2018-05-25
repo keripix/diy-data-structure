@@ -16,8 +16,8 @@ class TravellingOnADoubleLinkedListTest extends \PHPUnit\Framework\TestCase
         $secondNode = $doubleLinkedList->prepend(2);
         $thirdNode = $doubleLinkedList->prepend(3); // this is the head
 
-        $this->assertEquals($thirdNode, $doubleLinkedList->head());
-        $this->assertEquals($secondNode, $doubleLinkedList->head()->previous());
+        $this->assertSame($thirdNode, $doubleLinkedList->head());
+        $this->assertSame($secondNode, $doubleLinkedList->head()->previous());
     }
 
     /**
