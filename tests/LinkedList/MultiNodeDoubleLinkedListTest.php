@@ -52,9 +52,9 @@ class MultiNodeDoubleLinkedListTest extends \PHPUnit\Framework\TestCase
     {
         $doubleLinkedList = new DoubleLinkedList();
 
-        $firstNode = $doubleLinkedList->prepend(1);
-        $doubleLinkedList->prepend(2);
+        $doubleLinkedList->append(1);
+        $secondNode = $doubleLinkedList->append(2);
 
-        $this->assertEquals($firstNode, $doubleLinkedList->tail());
+        $this->assertEquals($secondNode, $doubleLinkedList->tail());
     }
 }
