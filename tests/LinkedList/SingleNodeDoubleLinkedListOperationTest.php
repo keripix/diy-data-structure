@@ -36,7 +36,7 @@ class SingleNodeDoubleLinkedListOperationTest extends \PHPUnit\Framework\TestCas
         $doubleLinkedList = new DoubleLinkedList();
         $doubleLinkedList->prepend('Beginning');
 
-        $this->assertEquals(1, $doubleLinkedList->getSize());
+        $this->assertEquals(1, $doubleLinkedList->size());
     }
 
     /**
@@ -69,6 +69,6 @@ class SingleNodeDoubleLinkedListOperationTest extends \PHPUnit\Framework\TestCas
         $doubleLinkedList = new DoubleLinkedList();
         $doubleLinkedList->append('Last');
 
-        $this->assertEquals(1, $doubleLinkedList->getSize());
+        $this->assertEquals(1, $doubleLinkedList->size());
     }
 }
