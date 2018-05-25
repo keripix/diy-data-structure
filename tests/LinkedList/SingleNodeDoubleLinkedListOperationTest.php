@@ -2,7 +2,7 @@
 
 namespace Diy\DataStructure\Tests\LinkedList;
 
-class DoubleLinkedListOperationTest extends \PHPUnit\Framework\TestCase
+class SingleNodeDoubleLinkedListOperationTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
