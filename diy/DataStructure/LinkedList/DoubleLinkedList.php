@@ -22,7 +22,7 @@ class DoubleLinkedList
         $this->size = 0;
     }
 
-    public function getSize(): int
+    public function size(): int
     {
         return $this->size;
     }
