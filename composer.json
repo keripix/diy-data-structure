@@ -1,0 +1,21 @@
+{
+    "name": "keripix/dyi_data_structure",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "A. Akbar Hidayat",
+            "email": "keripix@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^7.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Dyi\\DataStructure\\": "dyi/DataStructure"
+        }
+    }
+}
