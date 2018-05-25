@@ -82,7 +82,7 @@ class MultiNodeDoubleLinkedListTest extends \PHPUnit\Framework\TestCase
         $doubleLinkedList->prepend(1);
         $doubleLinkedList->append(2);
 
-        $this->assertEquals(2, $doubleLinkedList->getSize());
+        $this->assertEquals(2, $doubleLinkedList->size());
     }
 
     /**
@@ -95,8 +95,8 @@ class MultiNodeDoubleLinkedListTest extends \PHPUnit\Framework\TestCase
         $doubleLinkedList->prepend('head');
         $doubleLinkedList->append('tail');
 
-        $this->assertEquals('head', $doubleLinkedList->head()->getValue());
-        $this->assertEquals('tail', $doubleLinkedList->tail()->getValue());
-        $this->assertEquals(3, $doubleLinkedList->getSize());
+        $this->assertEquals('head', $doubleLinkedList->head()->value());
+        $this->assertEquals('tail', $doubleLinkedList->tail()->value());
+        $this->assertEquals(3, $doubleLinkedList->size());
     }
 }
