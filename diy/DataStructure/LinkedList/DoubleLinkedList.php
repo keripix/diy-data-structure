@@ -62,4 +62,15 @@ class DoubleLinkedList
 
         return $newNode;
     }
+
+    public function append($value)
+    {
+        $newNode = new Node($value);
+        $this->head = $newNode;
+        $this->tail = $newNode;
+
+        $this->size++;
+
+        return $newNode;
+    }
 }
