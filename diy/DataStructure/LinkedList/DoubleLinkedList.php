@@ -20,6 +20,11 @@ class DoubleLinkedList
         return null;
     }
 
+    public function tail()
+    {
+        return null;
+    }
+
     public function next()
     {
         return null;
