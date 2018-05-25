@@ -55,7 +55,10 @@ class SingleNodeDoubleLinkedListOperationTest extends \PHPUnit\Framework\TestCas
      */
     public function uponInsertingASingleNodeAtTheBackThenTheTailShouldPointAtIt(): void
     {
+        $doubleLinkedList = new DoubleLinkedList();
+        $node = $doubleLinkedList->append('Last');
 
+        $this->assertEquals($node, $doubleLinkedList->head());
     }
 
     /**
@@ -63,6 +66,9 @@ class SingleNodeDoubleLinkedListOperationTest extends \PHPUnit\Framework\TestCas
      */
     public function uponInsertingASingleNodeAtTheBackThenTheSizeShouldBeOne(): void
     {
+        $doubleLinkedList = new DoubleLinkedList();
+        $doubleLinkedList->append('Last');
 
+        $this->assertEquals(1, $doubleLinkedList->getSize());
     }
 }
