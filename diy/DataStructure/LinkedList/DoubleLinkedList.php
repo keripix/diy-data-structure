@@ -56,7 +56,10 @@ class DoubleLinkedList
     {
         $newNode = new Node($value);
         $this->head = $newNode;
-        $this->tail = $newNode;
+
+        if ($this->tail === null) {
+            $this->tail = $newNode;
+        }
 
         $this->size++;
 
