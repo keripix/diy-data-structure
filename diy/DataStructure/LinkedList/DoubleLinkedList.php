@@ -65,7 +65,7 @@ class DoubleLinkedList
         }
         // the new tail
         $this->tail = $newTail;
-
+        // if the head is empty, then it points at the new tail
         if ($this->head === null) {
             $this->head = $newTail;
         }
