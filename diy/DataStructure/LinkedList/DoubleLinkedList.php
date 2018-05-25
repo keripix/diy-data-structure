@@ -59,6 +59,11 @@ class DoubleLinkedList
     public function append($value): Node
     {
         $newNode = new Node($value, $this->tail, null);
+        // if not empty, then the current tail should point previosly at the new tail
+        if ($this->tail !== null) {
+            $this->tail->pointsPreviousAt($newNode);
+        }
+        // the new tail
         $this->tail = $newNode;
 
         if ($this->head === null) {
