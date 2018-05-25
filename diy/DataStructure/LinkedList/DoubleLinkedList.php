@@ -1,6 +1,6 @@
 <?php
 
-namespace Dyi\DataStructure\LinkedList;
+namespace Diy\DataStructure\LinkedList;
 
 class DoubleLinkedList
 {

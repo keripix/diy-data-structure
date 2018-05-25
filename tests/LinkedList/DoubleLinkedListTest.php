@@ -1,8 +1,8 @@
 <?php
 
-namespace Dyi\DataStructure\Tests\LinkedList;
+namespace Diy\DataStructure\Tests\LinkedList;
 
-use Dyi\DataStructure\LinkedList\DoubleLinkedList;
+use Diy\DataStructure\LinkedList\DoubleLinkedList;
 
 class DoubleLinkedListTest extends \PHPUnit\Framework\TestCase
 {

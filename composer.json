@@ -17,12 +17,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Dyi\\DataStructure\\": "dyi/DataStructure"
+            "Diy\\DataStructure\\": "diy/DataStructure"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Dyi\\DataStructure\\Tests\\": "tests"
+            "Diy\\DataStructure\\Tests\\": "tests"
         }
     }
 }
