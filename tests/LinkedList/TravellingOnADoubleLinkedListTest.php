@@ -122,4 +122,22 @@ class TravellingOnADoubleLinkedListTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(2, ($currentNode = $currentNode->next())->value());
         $this->assertEquals(1, ($currentNode = $currentNode->next())->value());
     }
+
+    /**
+     * @test
+     */
+    public function uponPrependingMultipleNodesThenItShouldBeAbleToTravelFromHeadToTail(): void
+    {
+        $doubleLinkedList = new DoubleLinkedList();
+        $doubleLinkedList->prepend(1);
+        $doubleLinkedList->prepend(2);
+        $doubleLinkedList->prepend(3);
+        $doubleLinkedList->prepend(4);
+        $doubleLinkedList->prepend(5); // this is the head
+
+        $this->assertEquals(4, ($currentNode = $doubleLinkedList->head()->previous())->value());
+        $this->assertEquals(3, ($currentNode = $currentNode->previous())->value());
+        $this->assertEquals(2, ($currentNode = $currentNode->previous())->value());
+        $this->assertEquals(1, ($currentNode = $currentNode->previous())->value());
+    }
 }
