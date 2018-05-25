@@ -39,7 +39,7 @@ class DoubleLinkedList
 
     public function prepend($value): Node
     {
-        $newNode = new Node($value);
+        $newNode = new Node($value, null, $this->head);
         $this->head = $newNode;
 
         if ($this->tail === null) {

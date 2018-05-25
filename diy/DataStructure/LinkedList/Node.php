@@ -9,11 +9,11 @@ class Node
      */
     private $value;
     /**
-     * @var Node
+     * @var Node|null
      */
     private $next;
     /**
-     * @var Node
+     * @var Node|null
      */
     private $previous;
 
@@ -35,7 +35,7 @@ class Node
     /**
      * @return Node
      */
-    public function next(): Node
+    public function next(): ?Node
     {
         return $this->next;
     }
@@ -43,7 +43,7 @@ class Node
     /**
      * @return Node
      */
-    public function previous(): Node
+    public function previous(): ?Node
     {
         return $this->previous;
     }
