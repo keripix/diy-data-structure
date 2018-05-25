@@ -15,6 +15,11 @@ class DoubleLinkedList
         return null;
     }
 
+    public function head()
+    {
+        return null;
+    }
+
     public function next()
     {
         return null;
