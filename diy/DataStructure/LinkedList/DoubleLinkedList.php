@@ -69,8 +69,11 @@ class DoubleLinkedList
     public function append($value): Node
     {
         $newNode = new Node($value);
-        $this->head = $newNode;
         $this->tail = $newNode;
+
+        if ($this->head === null) {
+            $this->head = $newNode;
+        }
 
         $this->size++;
 

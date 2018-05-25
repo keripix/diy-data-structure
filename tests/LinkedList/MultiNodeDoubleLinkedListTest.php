@@ -31,4 +31,30 @@ class MultiNodeDoubleLinkedListTest extends \PHPUnit\Framework\TestCase
 
         $this->assertEquals($firstNode, $doubleLinkedList->tail());
     }
+
+    /**
+     * @test
+     */
+    public function uponInsertingTwoNodesFromTheBackThenTheHeadShouldPointToTheFirstNode(): void
+    {
+        $doubleLinkedList = new DoubleLinkedList();
+
+        $firstNode = $doubleLinkedList->append(1);
+        $doubleLinkedList->append(2);
+
+        $this->assertEquals($firstNode, $doubleLinkedList->head());
+    }
+
+    /**
+     * @test
+     */
+    public function uponInsertingTwoNodesFromTheBackThenTheTailShouldPointToTheSecondNode(): void
+    {
+        $doubleLinkedList = new DoubleLinkedList();
+
+        $firstNode = $doubleLinkedList->prepend(1);
+        $doubleLinkedList->prepend(2);
+
+        $this->assertEquals($firstNode, $doubleLinkedList->tail());
+    }
 }
