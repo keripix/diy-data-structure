@@ -12,16 +12,7 @@ class EmptyDoubleLinkedListTest extends \PHPUnit\Framework\TestCase
     public function anEmptyListShouldBeEmpty(): void
     {
         $doubleLinkedList = new DoubleLinkedList();
-        $this->assertEquals(0, $doubleLinkedList->getSize());
-    }
-
-    /**
-     * @test
-     */
-    public function anEmptyListCurrentNodeShouldBeNull(): void
-    {
-        $doubleLinkedList = new DoubleLinkedList();
-        $this->assertEmpty($doubleLinkedList->current());
+        $this->assertEquals(0, $doubleLinkedList->size());
     }
 
     /**
@@ -40,23 +31,5 @@ class EmptyDoubleLinkedListTest extends \PHPUnit\Framework\TestCase
     {
         $doubleLinkedList = new DoubleLinkedList();
         $this->assertEmpty($doubleLinkedList->tail());
-    }
-
-    /**
-     * @test
-     */
-    public function anEmptyListNextNodeShouldBeNull(): void
-    {
-        $doubleLinkedList = new DoubleLinkedList();
-        $this->assertEmpty($doubleLinkedList->next());
-    }
-
-    /**
-     * @test
-     */
-    public function anEmptyListPrevNodeShouldBeNull(): void
-    {
-        $doubleLinkedList = new DoubleLinkedList();
-        $this->assertEmpty($doubleLinkedList->previous());
     }
 }
