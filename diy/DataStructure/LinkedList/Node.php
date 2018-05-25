@@ -27,7 +27,7 @@ class Node
     /**
      * @return mixed
      */
-    public function getValue()
+    public function value()
     {
         return $this->value;
     }
