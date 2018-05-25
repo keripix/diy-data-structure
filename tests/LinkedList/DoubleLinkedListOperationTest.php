@@ -7,7 +7,7 @@ class DoubleLinkedListOperationTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function uponInsertingANewNodeAtFrontTheHeadShouldPointToIt()
+    public function uponInsertingANewNodeAtFrontTheHeadShouldPointToIt(): void
     {
         $doubleLinkedList = new \Diy\DataStructure\LinkedList\DoubleLinkedList();
         $frontNode = $doubleLinkedList->prepend('Beginning');
@@ -18,7 +18,7 @@ class DoubleLinkedListOperationTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function uponInsertingANewNodeAtFrontTheTailShouldPointToIt()
+    public function uponInsertingANewNodeAtFrontTheTailShouldPointToIt(): void
     {
         $doubleLinkedList = new \Diy\DataStructure\LinkedList\DoubleLinkedList();
         $firstNode = $doubleLinkedList->prepend('Beginning');
@@ -29,7 +29,7 @@ class DoubleLinkedListOperationTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function uponInsertingASingleNodeAtFrontTheSizeShouldBeOne()
+    public function uponInsertingASingleNodeAtFrontTheSizeShouldBeOne(): void
     {
         $doubleLinkedList = new \Diy\DataStructure\LinkedList\DoubleLinkedList();
         $doubleLinkedList->prepend('Beginning');
