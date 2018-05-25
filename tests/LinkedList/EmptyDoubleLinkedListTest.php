@@ -9,7 +9,7 @@ class EmptyDoubleLinkedListTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function anEmptyListShouldBeEmpty()
+    public function anEmptyListShouldBeEmpty(): void
     {
         $doubleLinkedList = new DoubleLinkedList();
         $this->assertEquals(0, $doubleLinkedList->getSize());
@@ -18,7 +18,7 @@ class EmptyDoubleLinkedListTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function anEmptyListCurrentNodeShouldBeNull()
+    public function anEmptyListCurrentNodeShouldBeNull(): void
     {
         $doubleLinkedList = new DoubleLinkedList();
         $this->assertEmpty($doubleLinkedList->current());
@@ -27,7 +27,7 @@ class EmptyDoubleLinkedListTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function anEmptyListHeadNodeShouldBeNull()
+    public function anEmptyListHeadNodeShouldBeNull(): void
     {
         $doubleLinkedList = new DoubleLinkedList();
         $this->assertEmpty($doubleLinkedList->head());
@@ -36,7 +36,7 @@ class EmptyDoubleLinkedListTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function anEmptyListTailNodeShouldBeNull()
+    public function anEmptyListTailNodeShouldBeNull(): void
     {
         $doubleLinkedList = new DoubleLinkedList();
         $this->assertEmpty($doubleLinkedList->tail());
@@ -45,7 +45,7 @@ class EmptyDoubleLinkedListTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function anEmptyListNextNodeShouldBeNull()
+    public function anEmptyListNextNodeShouldBeNull(): void
     {
         $doubleLinkedList = new DoubleLinkedList();
         $this->assertEmpty($doubleLinkedList->next());
@@ -54,7 +54,7 @@ class EmptyDoubleLinkedListTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function anEmptyListPrevNodeShouldBeNull()
+    public function anEmptyListPrevNodeShouldBeNull(): void
     {
         $doubleLinkedList = new DoubleLinkedList();
         $this->assertEmpty($doubleLinkedList->previous());
