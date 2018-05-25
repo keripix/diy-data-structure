@@ -17,7 +17,7 @@ class Node
      */
     private $previous;
 
-    public function __construct($value, Node $next, Node $previous)
+    public function __construct($value, Node $next = null, Node $previous = null)
     {
         $this->value = $value;
         $this->next = $next;
