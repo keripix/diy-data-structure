@@ -84,4 +84,19 @@ class MultiNodeDoubleLinkedListTest extends \PHPUnit\Framework\TestCase
 
         $this->assertEquals(2, $doubleLinkedList->getSize());
     }
+
+    /**
+     * @test
+     */
+    public function insertingThreeNodes(): void
+    {
+        $doubleLinkedList = new DoubleLinkedList();
+        $doubleLinkedList->prepend('middle');
+        $doubleLinkedList->prepend('head');
+        $doubleLinkedList->append('tail');
+
+        $this->assertEquals('head', $doubleLinkedList->head()->getValue());
+        $this->assertEquals('tail', $doubleLinkedList->tail()->getValue());
+        $this->assertEquals(3, $doubleLinkedList->getSize());
+    }
 }
