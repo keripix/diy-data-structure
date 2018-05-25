@@ -16,7 +16,7 @@ class MultiNodeDoubleLinkedListTest extends \PHPUnit\Framework\TestCase
         $doubleLinkedList->prepend(1);
         $secondNode = $doubleLinkedList->prepend(2);
 
-        $this->assertEquals($secondNode, $doubleLinkedList->head());
+        $this->assertSame($secondNode, $doubleLinkedList->head());
     }
 
     /**
@@ -29,7 +29,7 @@ class MultiNodeDoubleLinkedListTest extends \PHPUnit\Framework\TestCase
         $firstNode = $doubleLinkedList->prepend(1);
         $doubleLinkedList->prepend(2);
 
-        $this->assertEquals($firstNode, $doubleLinkedList->tail());
+        $this->assertSame($firstNode, $doubleLinkedList->tail());
     }
 
     /**
@@ -42,7 +42,7 @@ class MultiNodeDoubleLinkedListTest extends \PHPUnit\Framework\TestCase
         $firstNode = $doubleLinkedList->append(1);
         $doubleLinkedList->append(2);
 
-        $this->assertEquals($firstNode, $doubleLinkedList->head());
+        $this->assertSame($firstNode, $doubleLinkedList->head());
     }
 
     /**
@@ -55,7 +55,7 @@ class MultiNodeDoubleLinkedListTest extends \PHPUnit\Framework\TestCase
         $doubleLinkedList->append(1);
         $secondNode = $doubleLinkedList->append(2);
 
-        $this->assertEquals($secondNode, $doubleLinkedList->tail());
+        $this->assertSame($secondNode, $doubleLinkedList->tail());
     }
 
     /**
