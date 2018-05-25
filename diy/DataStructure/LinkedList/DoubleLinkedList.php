@@ -63,7 +63,7 @@ class DoubleLinkedList
         return $newNode;
     }
 
-    public function append($value)
+    public function append($value): Node
     {
         $newNode = new Node($value);
         $this->head = $newNode;
