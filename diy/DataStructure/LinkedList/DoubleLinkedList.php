@@ -5,11 +5,11 @@ namespace Diy\DataStructure\LinkedList;
 class DoubleLinkedList
 {
     /**
-     * @var Node
+     * @var Node|null
      */
     private $head;
     /**
-     * @var Node
+     * @var Node|null
      */
     private $tail;
     /**
