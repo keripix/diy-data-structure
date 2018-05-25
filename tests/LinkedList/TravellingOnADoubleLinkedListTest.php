@@ -32,4 +32,18 @@ class TravellingOnADoubleLinkedListTest extends \PHPUnit\Framework\TestCase
 
         $this->assertEmpty($doubleLinkedList->head()->next());
     }
+
+    /**
+     * @test
+     */
+    public function uponAddingNewNodesFromTheFrontThenTheTailShouldPointAtTheCorrectNextNode(): void
+    {
+        $doubleLinkedList = new DoubleLinkedList();
+        $firstNode = $doubleLinkedList->prepend(1); // this is the tail
+        $secondNode = $doubleLinkedList->prepend(2);
+        $doubleLinkedList->prepend(3); // this is the head
+
+        $this->assertSame($firstNode, $doubleLinkedList->tail());
+        $this->assertSame($secondNode, $doubleLinkedList->tail()->next());
+    }
 }

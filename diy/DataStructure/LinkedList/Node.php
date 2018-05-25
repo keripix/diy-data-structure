@@ -24,6 +24,11 @@ class Node
         $this->previous = $previous;
     }
 
+    public function pointsNextAt(Node $node): void
+    {
+        $this->next = $node;
+    }
+
     /**
      * @return mixed
      */

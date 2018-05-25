@@ -40,8 +40,13 @@ class DoubleLinkedList
     public function prepend($value): Node
     {
         $newHead = new Node($value, null, $this->head);
+        // if not empty, the current head should point next to the newHead
+        if ($this->head !== null) {
+            $this->head->pointsNextAt($newHead);
+        }
+        // replace the current head with the new one
         $this->head = $newHead;
-
+        // if the tail is empty, then the new head is the tail
         if ($this->tail === null) {
             $this->tail = $newHead;
         }
