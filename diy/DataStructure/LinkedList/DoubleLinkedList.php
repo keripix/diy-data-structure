@@ -58,20 +58,20 @@ class DoubleLinkedList
 
     public function append($value): Node
     {
-        $newNode = new Node($value, $this->tail, null);
+        $newTail = new Node($value, $this->tail, null);
         // if not empty, then the current tail should point previosly at the new tail
         if ($this->tail !== null) {
-            $this->tail->pointsPreviousAt($newNode);
+            $this->tail->pointsPreviousAt($newTail);
         }
         // the new tail
-        $this->tail = $newNode;
+        $this->tail = $newTail;
 
         if ($this->head === null) {
-            $this->head = $newNode;
+            $this->head = $newTail;
         }
 
         $this->size++;
 
-        return $newNode;
+        return $newTail;
     }
 }
