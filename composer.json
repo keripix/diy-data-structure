@@ -17,7 +17,11 @@
     },
     "autoload": {
         "psr-4": {
-            "Dyi\\DataStructure\\": "dyi/DataStructure",
+            "Dyi\\DataStructure\\": "dyi/DataStructure"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
             "Dyi\\DataStructure\\Tests\\": "tests"
         }
     }
