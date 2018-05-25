@@ -90,7 +90,7 @@ class TravellingOnADoubleLinkedListTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function canTravelFromBegginingToEnd(): void
+    public function uponAppendingMultipleNodesThenItShouldBeAbleToTravelFromHeadToTail(): void
     {
         $doubleLinkedList = new DoubleLinkedList();
         $doubleLinkedList->append(1); // this is the head
@@ -108,7 +108,7 @@ class TravellingOnADoubleLinkedListTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function canTravelFromTailToHead(): void
+    public function uponAppendingMultipleNodesThenItShouldBeAbleToTravelFromTailToHead(): void
     {
         $doubleLinkedList = new DoubleLinkedList();
         $doubleLinkedList->append(1);
