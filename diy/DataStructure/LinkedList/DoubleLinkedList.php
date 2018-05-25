@@ -38,10 +38,10 @@ class DoubleLinkedList
         return null;
     }
 
-    public function prepend($string)
+    public function prepend($value)
     {
-        $this->head = $string;
-        $this->tail = $string;
-        return $string;
+        $this->head = $value;
+        $this->tail = $value;
+        return $value;
     }
 }
