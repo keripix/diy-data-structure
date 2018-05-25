@@ -72,4 +72,16 @@ class MultiNodeDoubleLinkedListTest extends \PHPUnit\Framework\TestCase
         $this->assertNotSame($second, $doubleLinkedList->tail());
         $this->assertNotSame($doubleLinkedList->head(), $doubleLinkedList->tail());
     }
+
+    /**
+     * @test
+     */
+    public function upondInsertingTwoNewNodesThenTheSizeShouldBeTwo(): void
+    {
+        $doubleLinkedList = new DoubleLinkedList();
+        $doubleLinkedList->prepend(1);
+        $doubleLinkedList->append(2);
+
+        $this->assertEquals(2, $doubleLinkedList->getSize());
+    }
 }
