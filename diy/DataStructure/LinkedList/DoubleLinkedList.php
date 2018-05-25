@@ -6,6 +6,7 @@ class DoubleLinkedList
 {
 
     private $head;
+    private $tail;
 
     public function getSize()
     {
@@ -24,7 +25,7 @@ class DoubleLinkedList
 
     public function tail()
     {
-        return null;
+        return $this->tail;
     }
 
     public function next()
@@ -40,6 +41,7 @@ class DoubleLinkedList
     public function prepend($string)
     {
         $this->head = $string;
+        $this->tail = $string;
         return $string;
     }
 }
