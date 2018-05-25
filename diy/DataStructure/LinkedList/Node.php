@@ -35,7 +35,7 @@ class Node
     /**
      * @return Node
      */
-    public function getNext(): Node
+    public function next(): Node
     {
         return $this->next;
     }
