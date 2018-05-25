@@ -9,4 +9,14 @@ class DoubleLinkedList
     {
         return 0;
     }
+
+    public function current()
+    {
+        return null;
+    }
+
+    public function next()
+    {
+        return null;
+    }
 }

@@ -9,9 +9,27 @@ class DoubleLinkedListTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function anEmptyLinkedList()
+    public function anEmptyListShouldBeEmpty()
     {
         $doubleLinkedList = new DoubleLinkedList();
         $this->assertEquals(0, $doubleLinkedList->getSize());
+    }
+
+    /**
+     * @test
+     */
+    public function anEmptyListCurrentNodeShouldBeNull()
+    {
+        $doubleLinkedList = new DoubleLinkedList();
+        $this->assertEmpty($doubleLinkedList->current());
+    }
+
+    /**
+     * @test
+     */
+    public function anEmptyListNextNodeShouldBeNull()
+    {
+        $doubleLinkedList = new DoubleLinkedList();
+        $this->assertEmpty($doubleLinkedList->next());
     }
 }
