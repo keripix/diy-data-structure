@@ -86,4 +86,18 @@ class TravellingOnADoubleLinkedListTest extends \PHPUnit\Framework\TestCase
 
         $this->assertSame($secondNode, $doubleLinkedList->head()->previous());
     }
+
+    /**
+     * @test
+     */
+    public function canTravelFromBegginingToEnd(): void
+    {
+        $doubleLinkedList = new DoubleLinkedList();
+        $doubleLinkedList->append(1); // this is the head
+        $doubleLinkedList->append(2);
+        $doubleLinkedList->append(3); // this is the tail
+
+        $this->assertEquals(2, ($middleNode = $doubleLinkedList->head()->previous())->value());
+        $this->assertEquals(3, $middleNode->previous()->value());
+    }
 }
