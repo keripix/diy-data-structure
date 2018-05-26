@@ -66,6 +66,7 @@ class FindANodeTest extends \PHPUnit\Framework\TestCase
         $seven = $doubleLinkedList->insertAfter(7, $hello);
         $eight = $doubleLinkedList->insertAfter(8, $four);
 
+        $this->assertSame($eight, $doubleLinkedList->tail());
         $this->assertSame(
             $eight,
             $doubleLinkedList->find(8)
