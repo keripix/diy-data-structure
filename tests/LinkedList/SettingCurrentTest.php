@@ -16,4 +16,17 @@ class SettingCurrentTest extends \PHPUnit\Framework\TestCase
 
         $this->assertEquals($first, $doubleLinkedList->current());
     }
+
+    /**
+     * @test
+     */
+    public function settingCurrentOnFirstTwoAppends(): void
+    {
+        $this->markTestIncomplete();
+        $doubleLinkedList = new DoubleLinkedList();
+        $first = $doubleLinkedList->append(1);
+        $doubleLinkedList->append(2);
+
+        $this->assertEquals($first, $doubleLinkedList->current());
+    }
 }
