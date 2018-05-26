@@ -9,7 +9,7 @@ class TravellingOnADoubleLinkedListTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function uponAddingNewNodesFromTheFrontThenTheHeadShouldPointAtTheCorrectPreviousNode(): void
+    public function uponAddingNewNodesFromTheFrontThenTheHeadShouldHaveNoPreviousNode(): void
     {
         $doubleLinkedList = new DoubleLinkedList();
         $doubleLinkedList->prepend(1); // this is the tail
@@ -17,7 +17,9 @@ class TravellingOnADoubleLinkedListTest extends \PHPUnit\Framework\TestCase
         $thirdNode = $doubleLinkedList->prepend(3); // this is the head
 
         $this->assertSame($thirdNode, $doubleLinkedList->head());
-        $this->assertSame($secondNode, $doubleLinkedList->head()->previous());
+        // the heads move "next" towards the end
+        $this->assertSame($secondNode, $doubleLinkedList->head()->next());
+        $this->assertEmpty($doubleLinkedList->head()->previous());
     }
 
     /**
@@ -201,20 +203,23 @@ class TravellingOnADoubleLinkedListTest extends \PHPUnit\Framework\TestCase
     public function canBeAnIterable(): void
     {
         $doubleLinkedList = new DoubleLinkedList();
-        $first = $doubleLinkedList->prepend(1); // this is the tail
+        $first = $doubleLinkedList->prepend(1); // tail
         $second = $doubleLinkedList->prepend(2);
         $third = $doubleLinkedList->prepend(3);
         $fourth = $doubleLinkedList->prepend(4);
-        $fifth = $doubleLinkedList->prepend(5); // this is the head
-        $nodes = [$first, $second, $third, $fourth, $fifth];
+        $fifth = $doubleLinkedList->prepend(5); // head
+        $nodes = [$fifth, $fourth, $third, $second, $first];
 
         // starts from the tail
         $i = 0;
         foreach ($doubleLinkedList as $node) {
+            $this->assertSame($nodes[$i], $node);
             $this->assertSame($nodes[$i], $doubleLinkedList->current());
-            $this->assertEquals(++$i, $doubleLinkedList->key());
-            $this->assertEquals($i, $node->value());
+            $this->assertEquals($nodes[$i]->value(), $doubleLinkedList->key());
+            $i++;
         }
+        $this->assertEquals(5, $doubleLinkedList->size());
+        $this->assertEquals(4, $i);
     }
 
     /**
@@ -241,5 +246,28 @@ class TravellingOnADoubleLinkedListTest extends \PHPUnit\Framework\TestCase
         $this->assertSame($one, $current = $current->next());
         $this->assertSame($five, $current = $current->next());
         $this->assertSame($five, $doubleLinkedList->head());
+    }
+
+    /**
+     * @test
+     */
+    public function canIterateProperlyWhenUsingInsertBefore(): void
+    {
+        $this->markTestIncomplete();
+        $doubleLinkedList = new DoubleLinkedList();
+        $one = $doubleLinkedList->prepend(1);
+        $four = $doubleLinkedList->append(4);
+        $three = $doubleLinkedList->insertBefore(3, $four);
+        $two = $doubleLinkedList->insertBefore(2, $three);
+        $five = $doubleLinkedList->prepend(5); // head
+        $zero = $doubleLinkedList->insertBefore(0, $one);
+        $tail = $doubleLinkedList->insertBefore('tail', $two);
+        $nodes = ['tail', 2, 3, 4, 0, 1, 5];
+
+        // starts from the tail
+        $i = 0;
+        foreach ($doubleLinkedList as $node) {
+            $this->assertEquals($nodes[$i++], $node->value());
+        }
     }
 }
