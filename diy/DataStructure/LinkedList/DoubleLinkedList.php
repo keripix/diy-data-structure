@@ -89,6 +89,10 @@ class DoubleLinkedList implements \Iterator
         }
         // update the chain
         $node->pointsPreviousAt($newNode);
+        // if node is the old tail, then this new node should be the new tail
+        if ($this->tail === $node) {
+            $this->tail = $newNode;
+        }
 
         return $newNode;
     }
