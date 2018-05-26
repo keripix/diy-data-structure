@@ -17,22 +17,20 @@ class TravellingOnADoubleLinkedListTest extends \PHPUnit\Framework\TestCase
         $thirdNode = $doubleLinkedList->prepend(3); // this is the head
 
         $this->assertSame($thirdNode, $doubleLinkedList->head());
-        // the heads move "next" towards the end
-        $this->assertSame($secondNode, $doubleLinkedList->head()->next());
         $this->assertEmpty($doubleLinkedList->head()->previous());
     }
 
     /**
      * @test
      */
-    public function uponAddingNewNodesFromTheFrontThenTheHeadShouldHaveNoNextNode(): void
+    public function uponAddingNewNodesFromTheFrontThenTheHeadNextNodeWillBeThePreviousHead(): void
     {
         $doubleLinkedList = new DoubleLinkedList();
         $doubleLinkedList->prepend(1); // this is the tail
-        $doubleLinkedList->prepend(2);
+        $second = $doubleLinkedList->prepend(2);
         $doubleLinkedList->prepend(3); // this is the head
 
-        $this->assertEmpty($doubleLinkedList->head()->next());
+        $this->assertSame($second, $doubleLinkedList->head()->next());
     }
 
     /**
