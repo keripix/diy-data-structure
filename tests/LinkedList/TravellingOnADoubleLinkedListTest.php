@@ -174,10 +174,10 @@ class TravellingOnADoubleLinkedListTest extends \PHPUnit\Framework\TestCase
         $doubleLinkedList->prepend(4);
         $doubleLinkedList->prepend(5); // this is the head
 
-        $this->assertEquals(4, ($currentNode = $doubleLinkedList->head()->previous())->value());
-        $this->assertEquals(3, ($currentNode = $currentNode->previous())->value());
-        $this->assertEquals(2, ($currentNode = $currentNode->previous())->value());
-        $this->assertEquals(1, ($currentNode = $currentNode->previous())->value());
+        $this->assertEquals(4, ($currentNode = $doubleLinkedList->head()->next())->value());
+        $this->assertEquals(3, ($currentNode = $currentNode->next())->value());
+        $this->assertEquals(2, ($currentNode = $currentNode->next())->value());
+        $this->assertEquals(1, ($currentNode = $currentNode->next())->value());
     }
 
     /**
@@ -192,10 +192,10 @@ class TravellingOnADoubleLinkedListTest extends \PHPUnit\Framework\TestCase
         $doubleLinkedList->prepend(4);
         $doubleLinkedList->prepend(5);
 
-        $this->assertEquals(2, ($currentNode = $doubleLinkedList->tail()->next())->value());
-        $this->assertEquals(3, ($currentNode = $currentNode->next())->value());
-        $this->assertEquals(4, ($currentNode = $currentNode->next())->value());
-        $this->assertEquals(5, ($currentNode = $currentNode->next())->value());
+        $this->assertEquals(2, ($currentNode = $doubleLinkedList->tail()->previous())->value());
+        $this->assertEquals(3, ($currentNode = $currentNode->previous())->value());
+        $this->assertEquals(4, ($currentNode = $currentNode->previous())->value());
+        $this->assertEquals(5, ($currentNode = $currentNode->previous())->value());
     }
 
     /**
@@ -227,11 +227,14 @@ class TravellingOnADoubleLinkedListTest extends \PHPUnit\Framework\TestCase
         $doubleLinkedList->append(3);
         $doubleLinkedList->prepend(4); // this is the head
         $doubleLinkedList->append(5); // this is the tail
+        // position: 4, 1, 2, 3, 5
 
-        $this->assertEquals(3, ($currentNode = $doubleLinkedList->tail()->next())->value());
-        $this->assertEquals(2, ($currentNode = $currentNode->next())->value());
-        $this->assertEquals(1, ($currentNode = $currentNode->next())->value());
-        $this->assertEquals(4, ($currentNode = $currentNode->next())->value());
+        $this->assertEquals(4, $doubleLinkedList->head()->value());
+        $this->assertEquals(5, $doubleLinkedList->tail()->value());
+        $this->assertEquals(3, ($currentNode = $doubleLinkedList->tail()->previous())->value());
+        $this->assertEquals(2, ($currentNode = $currentNode->previous())->value());
+        $this->assertEquals(1, ($currentNode = $currentNode->previous())->value());
+        $this->assertEquals(4, ($currentNode = $currentNode->previous())->value());
     }
 
     /**
