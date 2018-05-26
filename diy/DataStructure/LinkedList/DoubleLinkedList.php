@@ -24,6 +24,7 @@ class DoubleLinkedList implements \Iterator
     public function __construct()
     {
         $this->size = 0;
+        $this->current = $this->head;
     }
 
     public function size(): int
@@ -150,8 +151,6 @@ class DoubleLinkedList implements \Iterator
      */
     public function rewind()
     {
-        if ($this->current->previous() !== null) {
-            $this->current = $this->current->previous();
-        }
+        $this->current = $this->head;
     }
 }
