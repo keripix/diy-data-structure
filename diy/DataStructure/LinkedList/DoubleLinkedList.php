@@ -20,10 +20,15 @@ class DoubleLinkedList implements \Iterator
      * @var int
      */
     private $size;
+    /**
+     * @var int
+     */
+    private $iterationPosition;
 
     public function __construct()
     {
         $this->size = 0;
+        $this->iterationPosition = 0;
     }
 
     public function size(): int
@@ -176,6 +181,7 @@ class DoubleLinkedList implements \Iterator
      */
     public function next()
     {
+        $this->iterationPosition++;
         $this->current = $this->current->next();
     }
 
@@ -187,7 +193,7 @@ class DoubleLinkedList implements \Iterator
      */
     public function key()
     {
-        return $this->current === null ? null : $this->current->value();
+        return $this->iterationPosition;
     }
 
     /**
@@ -211,5 +217,6 @@ class DoubleLinkedList implements \Iterator
     public function rewind()
     {
         $this->current = $this->head;
+        $this->iterationPosition = 0;
     }
 }
