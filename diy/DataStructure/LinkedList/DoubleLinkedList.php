@@ -81,6 +81,14 @@ class DoubleLinkedList implements \Iterator
         return $newTail;
     }
 
+    public function insertBefore($value, Node $node): Node
+    {
+        $newNode = new Node($value);
+        $node->pointsPreviousAt($newNode);
+
+        return $newNode;
+    }
+
     /**
      * Return the current element
      * @link http://php.net/manual/en/iterator.current.php
