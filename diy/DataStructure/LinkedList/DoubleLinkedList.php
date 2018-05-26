@@ -41,12 +41,23 @@ class DoubleLinkedList implements \Iterator
         return $this->tail;
     }
 
+    /**
+     * Add a new node from the front of the Linked List.
+     * The new node will become the head.
+     *
+     * The old head will be after the new head,
+     * thus it will be "next" to the head, not PREVIOUS,
+     * as nothing comes before the head.
+     *
+     * @param $value
+     * @return Node
+     */
     public function prepend($value): Node
     {
-        $newHead = new Node($value, null, $this->head);
+        $newHead = new Node($value, $this->head, null);
         // if not empty, the current head should point next to the newHead
         if ($this->head !== null) {
-            $this->head->pointsNextAt($newHead);
+            $this->head->pointsPreviousAt($newHead);
         }
         // replace the current head with the new one
         $this->head = $newHead;
