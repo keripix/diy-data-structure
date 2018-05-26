@@ -74,10 +74,10 @@ class DoubleLinkedList implements \Iterator
 
     public function append($value): Node
     {
-        $newTail = new Node($value, $this->tail, null);
+        $newTail = new Node($value, null, $this->tail);
         // if not empty, then the current tail should point previosly at the new tail
         if ($this->tail !== null) {
-            $this->tail->pointsPreviousAt($newTail);
+            $this->tail->pointsNextAt($newTail);
         }
         // the new tail
         $this->tail = $newTail;
