@@ -61,7 +61,7 @@ class InsertingNodeTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function canInsertBeforeAHeadNode(): void
+    public function whenInsertingBeforeAHeadThenTheNewNodeShouldBeTheHead(): void
     {
         $doubleLinkedList = new DoubleLinkedList();
         $firstNode = $doubleLinkedList->prepend(1);
