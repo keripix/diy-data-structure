@@ -13,7 +13,7 @@ class InsertingNodeTest extends \PHPUnit\Framework\TestCase
     {
         $doubleLinkedList = new DoubleLinkedList();
         $firstNode = $doubleLinkedList->prepend(1);
-        $newNode =  $doubleLinkedList->insertBefore(2, $doubleLinkedList->current());
+        $newNode =  $doubleLinkedList->insertBefore(2, $firstNode);
 
         $this->assertSame($newNode, $firstNode->previous());
     }
