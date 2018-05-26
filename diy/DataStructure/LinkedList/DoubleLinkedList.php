@@ -128,6 +128,8 @@ class DoubleLinkedList implements \Iterator
     {
         $newNode = new Node($value, $node->next(), $node);
 
+        $node->pointsNextAt($newNode);
+
         return $newNode;
     }
 
