@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection PhpUnusedLocalVariableInspection */
 
 namespace Diy\DataStructure\Tests\LinkedList;
 
