@@ -83,7 +83,7 @@ class DoubleLinkedList implements \Iterator
 
     public function insertBefore($value, Node $node): Node
     {
-        $newNode = new Node($value);
+        $newNode = new Node($value, $node);
         if ($node->previous() !== null) {
             $node->previous()->pointsNextAt($newNode);
         }
