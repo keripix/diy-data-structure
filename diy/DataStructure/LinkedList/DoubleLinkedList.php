@@ -115,6 +115,8 @@ class DoubleLinkedList implements \Iterator
             $this->head = $newNode;
         }
 
+        $this->size++;
+
         return $newNode;
     }
 

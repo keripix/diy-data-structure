@@ -291,7 +291,6 @@ class TravellingOnADoubleLinkedListTest extends \PHPUnit\Framework\TestCase
      */
     public function canIterateProperlyWhenUsingInsertBefore(): void
     {
-        $this->markTestIncomplete();
         $doubleLinkedList = new DoubleLinkedList();
         $one = $doubleLinkedList->prepend(1);
         $four = $doubleLinkedList->append(4);
@@ -300,12 +299,14 @@ class TravellingOnADoubleLinkedListTest extends \PHPUnit\Framework\TestCase
         $five = $doubleLinkedList->prepend(5); // head
         $zero = $doubleLinkedList->insertBefore(0, $one);
         $tail = $doubleLinkedList->insertBefore('tail', $two);
-        $nodes = ['tail', 2, 3, 4, 0, 1, 5];
+        $nodes = [$five, $zero, $one, $tail, $two, $three, $four];
 
         // starts from the tail
         $i = 0;
         foreach ($doubleLinkedList as $node) {
-            $this->assertEquals($nodes[$i++], $node->value());
+            $this->assertSame($nodes[$i++], $node);
         }
+        $this->assertEquals(7, $doubleLinkedList->size());
+        $this->assertEquals(7, $i);
     }
 }
