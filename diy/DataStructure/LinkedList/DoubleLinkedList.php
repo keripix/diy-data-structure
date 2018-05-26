@@ -98,6 +98,10 @@ class DoubleLinkedList implements \Iterator
      * - the newNode next points to $node,
      * - the newNode previous points to $node->previous
      * - the $node->previous will point to new node
+     *
+     * If the $node is the current head, then the new node
+     * will be the new head
+     *
      * @param $value
      * @param Node $node
      * @return Node
