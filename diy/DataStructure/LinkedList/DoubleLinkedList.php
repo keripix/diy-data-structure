@@ -92,6 +92,16 @@ class DoubleLinkedList implements \Iterator
         return $newTail;
     }
 
+    /**
+     * The $node will be after the newly created node.
+     * Thus:
+     * - the newNode next points to $node,
+     * - the newNode previous points to $node->previous
+     * - the $node->previous will point to new node
+     * @param $value
+     * @param Node $node
+     * @return Node
+     */
     public function insertBefore($value, Node $node): Node
     {
         $newNode = new Node($value, $node, $node->previous());
@@ -100,9 +110,9 @@ class DoubleLinkedList implements \Iterator
         }
         // update the chain
         $node->pointsPreviousAt($newNode);
-        // if node is the old tail, then this new node should be the new tail
-        if ($this->tail === $node) {
-            $this->tail = $newNode;
+        // if node is the old head, then this new node should be the new head
+        if ($this->head === $node) {
+            $this->head = $newNode;
         }
 
         return $newNode;
