@@ -302,15 +302,17 @@ class TravellingOnADoubleLinkedListTest extends \PHPUnit\Framework\TestCase
         $two = $doubleLinkedList->insertBefore(2, $three);
         $five = $doubleLinkedList->prepend(5); // head
         $zero = $doubleLinkedList->insertBefore(0, $one);
-        $tail = $doubleLinkedList->insertBefore('tail', $two);
-        $nodes = [$five, $zero, $one, $tail, $two, $three, $four];
+        $hello = $doubleLinkedList->insertBefore('hello', $two);
+        $seven = $doubleLinkedList->insertAfter(7, $hello);
+        $eight = $doubleLinkedList->insertAfter(8, $four);
+        $nodes = [$five, $zero, $one, $hello, $seven, $two, $three, $four, $eight];
 
         // starts from the tail
         $i = 0;
         foreach ($doubleLinkedList as $node) {
             $this->assertSame($nodes[$i++], $node);
         }
-        $this->assertEquals(7, $doubleLinkedList->size());
-        $this->assertEquals(7, $i);
+        $this->assertEquals(9, $doubleLinkedList->size());
+        $this->assertEquals(9, $i);
     }
 }
