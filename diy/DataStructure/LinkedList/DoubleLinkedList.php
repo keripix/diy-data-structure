@@ -124,6 +124,13 @@ class DoubleLinkedList implements \Iterator
         return $newNode;
     }
 
+    public function insertAfter($value, Node $node): Node
+    {
+        $newNode = new Node($value, $node->next(), $node);
+
+        return $newNode;
+    }
+
     /**
      * Return the current element
      * @link http://php.net/manual/en/iterator.current.php

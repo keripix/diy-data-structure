@@ -74,4 +74,18 @@ class InsertingNodeTest extends \PHPUnit\Framework\TestCase
         $this->assertSame($firstNode, $doubleLinkedList->tail());
         $this->assertSame($newNode, $doubleLinkedList->head());
     }
+
+    /**
+     * @test
+     */
+    public function whenInsertingAfterANodeThenTheNewNodeNextShouldPointsAtOldNodeNextNode(): void
+    {
+        $doubleLinkedList = new DoubleLinkedList();
+        $one = $doubleLinkedList->prepend(1);
+        $three = $doubleLinkedList->prepend(3);
+
+        $newNode = $doubleLinkedList->insertAfter(4, $three);
+
+        $this->assertSame($one, $newNode->next());
+    }
 }
