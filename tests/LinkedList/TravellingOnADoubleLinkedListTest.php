@@ -265,7 +265,7 @@ class TravellingOnADoubleLinkedListTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function uponAddingMultipleNodesWithInsertBeforeThenItShouldBeAbleToTravelFromTailToHead(): void
+    public function uponAddingMultipleNodesWithInsertThenItShouldBeAbleToTravelFromTailToHead(): void
     {
         $doubleLinkedList = new DoubleLinkedList();
         $one = $doubleLinkedList->prepend(1);
@@ -274,13 +274,17 @@ class TravellingOnADoubleLinkedListTest extends \PHPUnit\Framework\TestCase
         $two = $doubleLinkedList->insertBefore(2, $three);
         $five = $doubleLinkedList->prepend(5); // head
         $zero = $doubleLinkedList->insertBefore(0, $one);
-        $tail = $doubleLinkedList->insertBefore('tail', $two);
-        // nodes: 5, 0, 1, 'tail', 2, 3, 4
+        $hello = $doubleLinkedList->insertBefore('hello', $two);
+        $seven = $doubleLinkedList->insertAfter(7, $hello);
+        $eight = $doubleLinkedList->insertAfter(8, $four);
+        // nodes: 5, 0, 1, 'hello', 7, 2, 3, 4, 8
 
-        $this->assertSame($four, $doubleLinkedList->tail());
-        $this->assertSame($three, $current = $doubleLinkedList->tail()->previous());
+        $this->assertSame($eight, $doubleLinkedList->tail());
+        $this->assertSame($four, $current = $doubleLinkedList->tail()->previous());
+        $this->assertSame($three, $current = $current->previous());
         $this->assertSame($two, $current = $current->previous());
-        $this->assertSame($tail, $current = $current->previous());
+        $this->assertSame($seven, $current = $current->previous());
+        $this->assertSame($hello, $current = $current->previous());
         $this->assertSame($one, $current = $current->previous());
         $this->assertSame($zero, $current = $current->previous());
         $this->assertSame($five, $current = $current->previous());
