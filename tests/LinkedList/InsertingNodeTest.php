@@ -144,4 +144,18 @@ class InsertingNodeTest extends \PHPUnit\Framework\TestCase
 
         $this->assertEquals(3, $doubleLinkedList->size());
     }
+
+    /**
+     * @test
+     */
+    public function whenInsertingAfterATailThenTheNewNodeShouldBecomeTheNewTail(): void
+    {
+        $doubleLinkedList = new DoubleLinkedList();
+        $tail = $doubleLinkedList->prepend(1);
+        $doubleLinkedList->prepend(3);
+
+        $newNode = $doubleLinkedList->insertAfter('new tail', $tail);
+
+        $this->assertSame($newNode, $doubleLinkedList->tail());
+    }
 }

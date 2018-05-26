@@ -131,6 +131,11 @@ class DoubleLinkedList implements \Iterator
         if ($node->next() !== null) {
             $node->next()->pointsPreviousAt($newNode);
         }
+
+        if ($this->tail === $node) {
+            $this->tail = $newNode;
+        }
+
         $node->pointsNextAt($newNode);
 
         $this->size++;
