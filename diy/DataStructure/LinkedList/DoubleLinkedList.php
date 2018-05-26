@@ -93,7 +93,7 @@ class DoubleLinkedList implements \Iterator
     }
 
     /**
-     * The $node will be after the newly created node.
+     * The $node will be before the newly created node.
      * Thus:
      * - the newNode next points to $node,
      * - the newNode previous points to $node->previous
@@ -124,6 +124,20 @@ class DoubleLinkedList implements \Iterator
         return $newNode;
     }
 
+    /**
+     * The $node will be after the newly created node.
+     * Thus:
+     * - the newNode previous points toward $node,
+     * - the newNode next points to $node->next
+     * - the $node->nexr will point to new node
+     *
+     * If the $node is the current tail the new node
+     * will be the new tail
+     *
+     * @param $value
+     * @param Node $node
+     * @return Node
+     */
     public function insertAfter($value, Node $node): Node
     {
         $newNode = new Node($value, $node->next(), $node);
