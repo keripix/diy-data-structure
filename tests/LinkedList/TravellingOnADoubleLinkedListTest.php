@@ -13,7 +13,7 @@ class TravellingOnADoubleLinkedListTest extends \PHPUnit\Framework\TestCase
     {
         $doubleLinkedList = new DoubleLinkedList();
         $doubleLinkedList->prepend(1); // this is the tail
-        $secondNode = $doubleLinkedList->prepend(2);
+        $doubleLinkedList->prepend(2);
         $thirdNode = $doubleLinkedList->prepend(3); // this is the head
 
         $this->assertSame($thirdNode, $doubleLinkedList->head());
@@ -49,7 +49,7 @@ class TravellingOnADoubleLinkedListTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function uponAddingNewNodesFromTheFrontThenTheTailShouldPointAtTheCorrectNextNode(): void
+    public function uponAddingNewNodesFromTheFrontThenTheTailShouldPointAtTheCorrectPreviousNode(): void
     {
         $doubleLinkedList = new DoubleLinkedList();
         $firstNode = $doubleLinkedList->prepend(1); // this is the tail
@@ -57,7 +57,7 @@ class TravellingOnADoubleLinkedListTest extends \PHPUnit\Framework\TestCase
         $doubleLinkedList->prepend(3); // this is the head
 
         $this->assertSame($firstNode, $doubleLinkedList->tail());
-//        $this->assertSame($secondNode, $doubleLinkedList->tail()->next());
+        $this->assertSame($secondNode, $doubleLinkedList->tail()->previous());
     }
 
     /**
