@@ -162,6 +162,18 @@ class DoubleLinkedList implements \Iterator
         return $newNode;
     }
 
+    public function find($value): Node
+    {
+        $node = null;
+        $this->rewind();
+        while (!($node instanceof Node)) {
+            $node = $this->current->value() == $value ? $this->current : null;
+            $this->next();
+        }
+
+        return $node;
+    }
+
     /**
      * Return the current element
      * @link http://php.net/manual/en/iterator.current.php
