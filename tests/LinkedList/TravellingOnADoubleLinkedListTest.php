@@ -194,4 +194,23 @@ class TravellingOnADoubleLinkedListTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(1, ($currentNode = $currentNode->next())->value());
         $this->assertEquals(4, ($currentNode = $currentNode->next())->value());
     }
+
+    /**
+     * @test
+     */
+    public function canBeAnIterable(): void
+    {
+        $doubleLinkedList = new DoubleLinkedList();
+        $doubleLinkedList->prepend(1); // this is the tail
+        $doubleLinkedList->prepend(2);
+        $doubleLinkedList->prepend(3);
+        $doubleLinkedList->prepend(4);
+        $doubleLinkedList->prepend(5); // this is the head
+
+        // starts from the tail
+        $i = 1;
+        foreach ($doubleLinkedList as $node) {
+            $this->assertEquals($i++, $node->value());
+        }
+    }
 }
