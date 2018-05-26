@@ -9,7 +9,7 @@ class MultiNodeDoubleLinkedListTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function uponInsertingTwoNodesFromFrontThenTheHeadShouldPointToTheSecondNode(): void
+    public function uponInsertingTwoNodesFromFrontThenTheHeadShouldPointToTheLaterNode(): void
     {
         $doubleLinkedList = new DoubleLinkedList();
 
