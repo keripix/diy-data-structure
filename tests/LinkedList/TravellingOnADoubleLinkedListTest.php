@@ -255,7 +255,7 @@ class TravellingOnADoubleLinkedListTest extends \PHPUnit\Framework\TestCase
         foreach ($doubleLinkedList as $node) {
             $this->assertSame($nodes[$i], $node);
             $this->assertSame($nodes[$i], $doubleLinkedList->current());
-            $this->assertEquals($nodes[$i]->value(), $doubleLinkedList->key());
+            $this->assertEquals($i, $doubleLinkedList->key());
             $i++;
         }
         $this->assertEquals(5, $doubleLinkedList->size());
