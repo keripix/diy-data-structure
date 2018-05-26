@@ -120,7 +120,7 @@ class TravellingOnADoubleLinkedListTest extends \PHPUnit\Framework\TestCase
     {
         $doubleLinkedList = new DoubleLinkedList();
         $doubleLinkedList->append(1); // this is the head
-        $secondNode = $doubleLinkedList->append(2);
+        $doubleLinkedList->append(2);
         $doubleLinkedList->append(3); // this is the tail
 
         $this->assertEmpty($doubleLinkedList->head()->previous());
@@ -136,12 +136,12 @@ class TravellingOnADoubleLinkedListTest extends \PHPUnit\Framework\TestCase
         $doubleLinkedList->append(2);
         $doubleLinkedList->append(3);
         $doubleLinkedList->append(4);
-        $doubleLinkedList->append(5);
+        $doubleLinkedList->append(5); // this is the tail
 
-        $this->assertEquals(2, ($currentNode = $doubleLinkedList->head()->previous())->value());
-        $this->assertEquals(3, ($currentNode = $currentNode->previous())->value());
-        $this->assertEquals(4, ($currentNode = $currentNode->previous())->value());
-        $this->assertEquals(5, ($currentNode = $currentNode->previous())->value());
+        $this->assertEquals(2, ($currentNode = $doubleLinkedList->head()->next())->value());
+        $this->assertEquals(3, ($currentNode = $currentNode->next())->value());
+        $this->assertEquals(4, ($currentNode = $currentNode->next())->value());
+        $this->assertEquals(5, ($currentNode = $currentNode->next())->value());
     }
 
     /**
