@@ -162,11 +162,11 @@ class DoubleLinkedList implements \Iterator
         return $newNode;
     }
 
-    public function find($value): Node
+    public function find($value): ?Node
     {
         $node = null;
         $this->rewind();
-        while (!($node instanceof Node)) {
+        while (!($node instanceof Node) && $this->valid()) {
             $node = $this->current->value() == $value ? $this->current : null;
             $this->next();
         }
