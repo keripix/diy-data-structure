@@ -133,6 +133,8 @@ class DoubleLinkedList implements \Iterator
         }
         $node->pointsNextAt($newNode);
 
+        $this->size++;
+
         return $newNode;
     }
 

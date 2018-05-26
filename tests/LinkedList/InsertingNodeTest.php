@@ -130,4 +130,18 @@ class InsertingNodeTest extends \PHPUnit\Framework\TestCase
 
         $this->assertSame($newNode, $one->previous());
     }
+
+    /**
+     * @test
+     */
+    public function whenInsertingAfterANodeThenTheSizeShouldIncrease(): void
+    {
+        $doubleLinkedList = new DoubleLinkedList();
+        $doubleLinkedList->prepend(1);
+        $three = $doubleLinkedList->prepend(3);
+
+        $doubleLinkedList->insertAfter(4, $three);
+
+        $this->assertEquals(3, $doubleLinkedList->size());
+    }
 }
