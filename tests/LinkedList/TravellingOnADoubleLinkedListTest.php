@@ -259,7 +259,7 @@ class TravellingOnADoubleLinkedListTest extends \PHPUnit\Framework\TestCase
             $i++;
         }
         $this->assertEquals(5, $doubleLinkedList->size());
-        $this->assertEquals(4, $i);
+        $this->assertEquals(5, $i);
     }
 
     /**
