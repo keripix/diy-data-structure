@@ -201,16 +201,19 @@ class TravellingOnADoubleLinkedListTest extends \PHPUnit\Framework\TestCase
     public function canBeAnIterable(): void
     {
         $doubleLinkedList = new DoubleLinkedList();
-        $doubleLinkedList->prepend(1); // this is the tail
-        $doubleLinkedList->prepend(2);
-        $doubleLinkedList->prepend(3);
-        $doubleLinkedList->prepend(4);
-        $doubleLinkedList->prepend(5); // this is the head
+        $first = $doubleLinkedList->prepend(1); // this is the tail
+        $second = $doubleLinkedList->prepend(2);
+        $third = $doubleLinkedList->prepend(3);
+        $fourth = $doubleLinkedList->prepend(4);
+        $fifth = $doubleLinkedList->prepend(5); // this is the head
+        $nodes = [$first, $second, $third, $fourth, $fifth];
 
         // starts from the tail
-        $i = 1;
+        $i = 0;
         foreach ($doubleLinkedList as $node) {
-            $this->assertEquals($i++, $node->value());
+            $this->assertSame($nodes[$i], $doubleLinkedList->current());
+            $this->assertEquals(++$i, $doubleLinkedList->key());
+            $this->assertEquals($i, $node->value());
         }
     }
 }
