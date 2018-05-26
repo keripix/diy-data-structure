@@ -90,5 +90,6 @@ class FindANodeTest extends \PHPUnit\Framework\TestCase
         $eight = $doubleLinkedList->insertAfter(8, $four);
 
         $this->assertEmpty($doubleLinkedList->find(10));
+        $this->assertEquals(9,$doubleLinkedList->key());
     }
 }
