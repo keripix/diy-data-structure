@@ -174,6 +174,15 @@ class DoubleLinkedList implements \Iterator
         return $node;
     }
 
+    public function deleteHavingValue($value): ?Node
+    {
+        $toBeDeleted = $this->find($value);
+
+        if ($toBeDeleted === null) {
+            return null;
+        }
+    }
+
     /**
      * Return the current element
      * @link http://php.net/manual/en/iterator.current.php
