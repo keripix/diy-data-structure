@@ -27,4 +27,26 @@ class FindANodeTest extends \PHPUnit\Framework\TestCase
             $doubleLinkedList->find(7)
         );
     }
+
+    /**
+     * @test
+     */
+    public function canFindTheHead(): void
+    {
+        $doubleLinkedList = new DoubleLinkedList();
+        $one = $doubleLinkedList->prepend(1);
+        $four = $doubleLinkedList->append(4);
+        $three = $doubleLinkedList->insertBefore(3, $four);
+        $two = $doubleLinkedList->insertBefore(2, $three);
+        $five = $doubleLinkedList->prepend(5); // head
+        $zero = $doubleLinkedList->insertBefore(0, $one);
+        $hello = $doubleLinkedList->insertBefore('hello', $two);
+        $seven = $doubleLinkedList->insertAfter(7, $hello);
+        $eight = $doubleLinkedList->insertAfter(8, $four);
+
+        $this->assertSame(
+            $five,
+            $doubleLinkedList->find(5)
+        );
+    }
 }
