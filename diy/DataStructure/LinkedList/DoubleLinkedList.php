@@ -162,13 +162,18 @@ class DoubleLinkedList implements \Iterator
         return $newNode;
     }
 
+    /**
+     * Finding the node which has the value $value. The comparison is done strictly.
+     * @param $value
+     * @return Node|null
+     */
     public function find($value): ?Node
     {
         $node = null;
         $this->rewind();
 
         while (!($node instanceof Node) && $this->valid()) {
-            $node = $this->current->value() == $value ? $this->current : null;
+            $node = $this->current->value() === $value ? $this->current : null;
 
             if ($node === null) {
                 $this->next();
