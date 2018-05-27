@@ -166,9 +166,13 @@ class DoubleLinkedList implements \Iterator
     {
         $node = null;
         $this->rewind();
+
         while (!($node instanceof Node) && $this->valid()) {
             $node = $this->current->value() == $value ? $this->current : null;
-            $this->next();
+
+            if ($node === null) {
+                $this->next();
+            }
         }
 
         return $node;
@@ -181,6 +185,12 @@ class DoubleLinkedList implements \Iterator
         if ($toBeDeleted === null) {
             return null;
         }
+
+        if ($toBeDeleted->previous() !== null) {
+            $toBeDeleted->previous()->pointsNextAt($toBeDeleted->next());
+        }
+
+        return $toBeDeleted;
     }
 
     /**
