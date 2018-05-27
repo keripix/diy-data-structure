@@ -199,6 +199,8 @@ class DoubleLinkedList implements \Iterator
             $toBeDeleted->next()->pointsPreviousAt($toBeDeleted->previous());
         }
 
+        $this->size--;
+
         return $toBeDeleted;
     }
 
