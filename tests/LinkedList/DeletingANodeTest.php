@@ -47,6 +47,6 @@ class DeletingANodeTest extends \PHPUnit\Framework\TestCase
 
         $deleted = $doubleLinkedList->deleteHavingValue('hello');
 
-        $this->assertSame($hello, $deleted);
+        $this->assertSame($seven, $one->next());
     }
 }
