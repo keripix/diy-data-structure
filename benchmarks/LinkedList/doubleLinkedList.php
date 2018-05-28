@@ -2,7 +2,7 @@
 
 ini_set('memory_limit', '2G');
 
-require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/../bootstrap.php';
 
 $doubleLinkedList = new \Diy\DataStructure\LinkedList\DoubleLinkedList();
 $start = memory_get_usage();
