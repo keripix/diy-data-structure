@@ -1,7 +1,5 @@
 <?php
 
-ini_set('memory_limit', '2G');
-
 require __DIR__ . '/../bootstrap.php';
 
 $doubleLinkedList = new \Diy\DataStructure\LinkedList\DoubleLinkedList();
