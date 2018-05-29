@@ -69,7 +69,6 @@ class DoubleLinkedList implements \Iterator
         // if the tail is empty, then the new head is the tail
         if ($this->tail === null) {
             $this->tail = $newHead;
-            $this->current = $this->tail;
         }
 
         $this->size++;
@@ -86,7 +85,6 @@ class DoubleLinkedList implements \Iterator
         }
         // the new tail
         $this->tail = $newTail;
-        $this->current = $this->tail;
         // if the head is empty, then it points at the new tail
         if ($this->head === null) {
             $this->head = $newTail;
