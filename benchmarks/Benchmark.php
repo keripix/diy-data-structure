@@ -35,9 +35,9 @@ class Benchmark
     {
         print_r([
             'Title' => $this->title,
-            'Start Memory' => $this->startMemoryUsage,
-            'Finish Memory' => $this->endMemoryUsage,
-            'Delta Memory' => $this->endMemoryUsage - $this->startMemoryUsage,
+            'Start Memory' => number_format($this->startMemoryUsage),
+            'Finish Memory' => number_format($this->endMemoryUsage),
+            'Delta Memory' => number_format($this->endMemoryUsage - $this->startMemoryUsage),
             'Start Time' => $this->startTime,
             'End Time' => $this->endTime,
             'Delta Time' => $this->endTime - $this->startTime . ' second'
