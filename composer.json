@@ -18,7 +18,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Diy\\DataStructure\\": "diy/DataStructure"
+            "Diy\\DataStructure\\": "diy/DataStructure",
+            "Diy\\Benchmark\\": "benchmarks"
         }
     },
     "autoload-dev": {
