@@ -18,20 +18,20 @@ try {
 //    $doubleLinkedList = new \Diy\DataStructure\LinkedList\DoubleLinkedList();
 //    $dyi = Benchmark::start('DYI');
 //
-//    for ($i = 0; $i < 2000000; $i++) {
+//    for ($i = 0; $i < 1000000; $i++) {
 //        $doubleLinkedList->append(1);
 //    }
 //
 //    $dyi->end();
 
-    $doubleLinkedList = new \Diyds\LinkedList\DoubleLinkedList();
-    $diyDS = Benchmark::start('DIY DS');
-
-    for ($i = 0; $i < 2000000; $i++) {
-        $doubleLinkedList->append(1);
-    }
-
-    $diyDS->end();
+//    $dsLinkedList = new \Diyds\LinkedList\DoubleLinkedList();
+//    $diyDS = Benchmark::start('DIY DS');
+//
+//    for ($i = 0; $i < 1000000; $i++) {
+//        $dsLinkedList->append(1);
+//    }
+//
+//    $diyDS->end();
 
 } catch (\Exception $exception) {
     dump($exception->getMessage());
