@@ -1,24 +1,38 @@
 <?php
 
+namespace Diy\Benchmark;
+
 require __DIR__ . '/../bootstrap.php';
 
-$doubleLinkedList = new \Diy\DataStructure\LinkedList\DoubleLinkedList();
-$start = memory_get_usage();
-
 try {
-    for ($i = 0; $i < 60000; $i++) {
-        $doubleLinkedList->prepend(random_int(0, 10));
+
+//    $splLinkedList = new \SplDoublyLinkedList();
+//    $splBenchmark = Benchmark::start('SPL Double Linked List');
+//
+//    for ($i = 0; $i < 1000000; $i++) {
+//        $splLinkedList->push(1);
+//    }
+//
+//    $splBenchmark->end();
+
+//    $doubleLinkedList = new \Diy\DataStructure\LinkedList\DoubleLinkedList();
+//    $dyi = Benchmark::start('DYI');
+//
+//    for ($i = 0; $i < 2000000; $i++) {
+//        $doubleLinkedList->append(1);
+//    }
+//
+//    $dyi->end();
+
+    $doubleLinkedList = new \Diyds\LinkedList\DoubleLinkedList();
+    $diyDS = Benchmark::start('DIY DS');
+
+    for ($i = 0; $i < 2000000; $i++) {
+        $doubleLinkedList->append(1);
     }
-} catch (Exception $exception) {
-    dump($exception);
+
+    $diyDS->end();
+
+} catch (\Exception $exception) {
+    dump($exception->getMessage());
 }
-
-$finished = memory_get_usage();
-$delta = $finished - $start;
-
-dump([
-    'Start' => $start,
-    'Finish' => $finished,
-    'Delta' => $delta,
-    'Peak' => memory_get_peak_usage()
-]);

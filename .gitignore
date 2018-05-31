@@ -1,2 +1,7 @@
 vendor
 .idea
+zep/ext*
+.temp
+
+compile-errors.log
+compile.log
